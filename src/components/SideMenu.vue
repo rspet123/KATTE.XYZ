@@ -1,10 +1,12 @@
 <template>
   <div class="side-menu">
     <ul>
+      <li class="side-menu-link" @click="goBack">↼</li>
       <li><router-link class="side-menu-link" to="/">Home</router-link></li>
       <li><router-link class="side-menu-link" to="/about">About</router-link></li>
       <li><router-link class="side-menu-link" to="/portfolio">Portfolio</router-link></li>
       <li><router-link class="side-menu-link" to="/contact">Contact</router-link></li>
+      <li class="side-menu-link" @click="goForward">⇁</li>
     </ul>
   </div>
 </template>
@@ -28,6 +30,12 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
+    },
+    goBack() {
+      this.$router.back();
+    },
+    goForward() {
+      this.$router.forward();
     },
   }
 };
@@ -55,6 +63,7 @@ export default {
 
 .side-menu li {
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .side-menu .side-menu-link {

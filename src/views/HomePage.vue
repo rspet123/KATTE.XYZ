@@ -160,6 +160,7 @@ export default {
   font-size: 16px;
   resize: none;
   height: 20px;
+  overflow: hidden;
 }
 
 .terminal-output {
