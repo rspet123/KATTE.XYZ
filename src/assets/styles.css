@@ -11,6 +11,8 @@ onto all text elements to make them white on black background
 
 */
 .content-page {
+    position: relative;
+    top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center; 

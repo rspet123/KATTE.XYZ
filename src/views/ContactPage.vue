@@ -1,6 +1,6 @@
 <template>
   <div class="content-page">
-    <h1><TerminalCursor /> Contact Me</h1>
+    <h1><TerminalCursor /> Contact</h1>
     <div v-typewriter="{ text: 'Contact Me Here... Thanks', seconds: 2 }"></div>
     <div class="contact-links">
       <a
