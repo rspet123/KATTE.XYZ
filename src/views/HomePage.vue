@@ -69,6 +69,9 @@ export default {
         katte: () => {
           this.consoleOutput = "Katte is danish for cats, og jeg elsker katte :)";
         },
+        dogmeat: () => {
+          this.consoleOutput = "Hello my love ♥";
+        },
       },
     };
   },
