@@ -24,3 +24,20 @@ onto all text elements to make them white on black background
 .content-page > div {
     margin: 10px 0;
 }
+
+#app::-webkit-scrollbar {
+    width: 12px; 
+  }
+  
+  #app::-webkit-scrollbar-track {
+    background: #6e6e6e;
+  }
+  
+  #app::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 0; 
+  }
+  
+  #app::-webkit-scrollbar-thumb:hover {
+    background: #474747;
+  }

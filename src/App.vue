@@ -2,7 +2,7 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
-  <div id="app" class="scaled-content">
+  <div id="app">
     <BackgroundModel />
     <img alt="KATTE logo" class="main-logo" src="./assets/logo.png">
     <SideMenu />
@@ -44,8 +44,9 @@ export default {
 <style>
 #app {
   position: relative;
-  width: 100%;
-  height: 100vh; 
+  width: 99%;
+  height: 96vh; 
+  overflow-x: hidden
 }
 
 .main-logo {

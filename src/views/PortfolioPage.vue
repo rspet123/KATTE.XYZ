@@ -42,7 +42,7 @@ export default {
             "This site, Right here, built with Vue.js and Three.js.",
           link: "",
           technologies: ["Vue.js", "Three.js"],
-          more: "I made this site to have a place to show off my projects and skills, and to learn Vue.js and Tailwind CSS.",
+          more: "I made this site to have a place to show off my projects and skills, and to learn Vue.js and Three.js.",
         },
         {
           title: "Wasabii",
