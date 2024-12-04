@@ -2,7 +2,7 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
-  <div id="app">
+  <div id="app" class="scaled-content">
     <BackgroundModel />
     <img alt="KATTE logo" class="main-logo" src="./assets/logo.png">
     <SideMenu />
@@ -27,6 +27,16 @@ export default {
     removeGlitch(event) {
       event.target.classList.remove('glitch');
     },
+    scrollToBottom() {
+      console.log("Scrolling to bottom");
+      this.$nextTick(() => {
+        const appElement = document.getElementById('app');
+        appElement.scrollTop = appElement.scrollHeight;
+      });
+    },
+  },
+  mounted() {
+    this.scrollToBottom();
   },
 };
 </script>
@@ -39,9 +49,13 @@ export default {
   overflow: hidden;
 }
 
+.scaled-content {
+  overflow: hidden;
+}
+
 .main-logo {
   position: absolute;
-  top: 20px; 
+  top: -75px; 
   left: 50%;
   transform: translateX(-50%) translateY(150%);
   z-index: 9999; 

@@ -136,7 +136,10 @@ export default {
 
 <style scoped>
 .three-container {
-  width: 100vw;
-  height: 60vh;
+  max-width: 100vw;
+  max-height: 45vh;
+  position: relative;
+  top: -50px;
+  z-index: -1;
 }
 </style>

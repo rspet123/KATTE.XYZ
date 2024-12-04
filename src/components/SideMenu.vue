@@ -36,13 +36,11 @@ export default {
 <style>
 .side-menu {
   position: absolute;
-  top: 0;
+  top: -25px;
   left: 0;
   width: 100%;
-  height: -50%;
   color: black;
   z-index: 5;
-  padding: 20px;
   font-family: 'Orbitron', sans-serif;
   display: flex;
   align-items: center;

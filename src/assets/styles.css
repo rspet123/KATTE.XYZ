@@ -10,21 +10,15 @@ filter: invert(0);
 onto all text elements to make them white on black background
 
 */
-
-/* Apply mix-blend-mode and filter to all text elements */
-h1, h2, h3, h4, h5, h6, p, span, a, li {
-    /* mix-blend-mode: difference; */
-    /*filter: invert(1); */
-}
-
 .content-page {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-align: center; /* Center text inside the container */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
 }
 
+
 .content-page > div {
-    margin: 10px 0; /* Add vertical spacing between divs */
+    margin: 10px 0;
 }
