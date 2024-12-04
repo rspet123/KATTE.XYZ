@@ -38,10 +38,12 @@ export default {
   border: none;
 }
 
-/* Hide Whole image when on mobile */
 @media (max-width: 600px) {
   .portrait-frame {
-    display: none;
+    border: 2px solid #000;
+    width: 20vh;
+    height: 20vh;
   }
 }
+
 </style>

@@ -63,4 +63,17 @@ export default {
 .about-text {
   margin-left: 20px;
 }
+
+/* Image looks messed up when the screen is small */
+@media (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-text {
+    margin-left: 0; 
+    margin-top: 20px;
+  }
+}
+
 </style>
