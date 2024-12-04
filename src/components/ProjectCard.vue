@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card-container" @click="toggleMoreInfo">
+  <div class="project-card-container" @click="toggleMoreInfo" @mousemove="handleMouseMove" @mouseleave="resetTransform">
     <div class="project-card" :class="{ flipped: showMore }">
       <div class="front">
         <h2>{{ title }}</h2>
@@ -59,6 +59,19 @@ export default {
     toggleMoreInfo() {
       this.showMore = !this.showMore;
     },
+    handleMouseMove(event) {
+      const card = event.currentTarget.querySelector('.project-card');
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+      const rotateX = (y / rect.height) * -20;
+      const rotateY = (x / rect.width) * 20;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    },
+    resetTransform(event) {
+      const card = event.currentTarget.querySelector('.project-card');
+      card.style.transform = 'rotateX(0) rotateY(0)';
+    },
   },
   props: {
     title: {
@@ -102,10 +115,6 @@ export default {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
-}
-
-.project-card-container:hover .project-card {
-  transform: rotateY(10deg);
 }
 
 .project-card.flipped {
