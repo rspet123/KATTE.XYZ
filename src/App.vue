@@ -27,16 +27,6 @@ export default {
     removeGlitch(event) {
       event.target.classList.remove('glitch');
     },
-    scrollToBottom() {
-      console.log("Scrolling to bottom");
-      this.$nextTick(() => {
-        const appElement = document.getElementById('app');
-        appElement.scrollTop = appElement.scrollHeight;
-      });
-    },
-  },
-  mounted() {
-    this.scrollToBottom();
   },
 };
 </script>
@@ -46,7 +36,11 @@ export default {
   position: relative;
   width: 99%;
   height: 96vh; 
-  overflow-x: hidden
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 .main-logo {
@@ -70,10 +64,17 @@ BackgroundModel {
   z-index: 1; 
 }
 
-@media (max-width: 600px) {
+/* Smaller screens */
+@media (max-width: 900px) {
   .main-logo {
     width: 90%; /* Adjust the width for smaller screens */
     top: 10%;
+  }
+}
+
+@media (max-width: 900px) {
+  BackgroundModel {
+    height: 100px; /* Adjust height for smaller screens */
   }
 }
 

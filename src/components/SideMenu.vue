@@ -81,8 +81,15 @@ export default {
     font-size: 68px;
 }
 
+/* Medium Screens */
+@media (max-width: 1000px) {
+  .side-menu-link {
+    font-size: 40px !important; 
+  }
+}
+
 /* Small Screens */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .side-menu-link {
     font-size: 20px !important; 
   }
