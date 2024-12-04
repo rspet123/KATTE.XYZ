@@ -74,13 +74,20 @@ export default {
   padding: 10px;
   transition: color 0.6s;
   transition: letter-spacing 0.6s;
+  transition: font-size 0.6s;
   
 }
 
 .side-menu .side-menu-link:hover {
     color: rgba(71, 71, 71);
     letter-spacing: 0.1em;
+    font-size: 72px;
 }
 
+@media (max-width: 600px) {
+  .side-menu-link {
+    font-size: 20px !important; /* Adjust the font size for smaller screens */
+  }
+}
 
 </style>

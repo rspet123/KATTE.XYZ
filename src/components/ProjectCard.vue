@@ -4,17 +4,20 @@
       <div class="front">
         <h2>{{ title }}</h2>
         <p>{{ description }}</p>
-        <a :href="link" v-if="!isPrivate" target="_blank">View Project</a>
-        <span v-else> <i class="fas fa-lock"></i> Private Project </span>
-        <div class="technologies">
-          <span
-            v-for="tech in technologies"
-            :key="tech"
-            class="tech-chip"
-            :style="{ backgroundColor: techColorMap[tech] || 'grey' }"
-          >
-            {{ tech }}
-          </span>
+        <div class="spacer"></div>
+        <div class="card-bottom-anchor">
+          <a :href="link" v-if="!isPrivate" target="_blank">View Project</a>
+          <span v-else> <i class="fas fa-lock"></i> Private Project </span>
+          <div class="technologies">
+            <span
+              v-for="tech in technologies"
+              :key="tech"
+              class="tech-chip"
+              :style="{ backgroundColor: techColorMap[tech] || 'grey' }"
+            >
+              {{ tech }}
+            </span>
+          </div>
         </div>
       </div>
       <div class="back">
@@ -118,6 +121,9 @@ export default {
   border: 1px solid #000000;
   padding: 16px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced appropriately */
 }
 
 .front {
@@ -163,5 +169,13 @@ export default {
 
 .more-info-content {
   text-align: left;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.card-bottom-anchor {
+  margin-top: auto;
 }
 </style>

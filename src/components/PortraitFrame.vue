@@ -32,4 +32,16 @@ export default {
   height: 100%;
   object-fit: cover;
 }
+
+/* Hide the image border when the image is loading */
+.portrait-image:not([src]) {
+  border: none;
+}
+
+/* Hide Whole image when on mobile */
+@media (max-width: 600px) {
+  .portrait-frame {
+    display: none;
+  }
+}
 </style>

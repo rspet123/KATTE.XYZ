@@ -46,11 +46,6 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh; 
-  overflow: hidden;
-}
-
-.scaled-content {
-  overflow: hidden;
 }
 
 .main-logo {
@@ -73,4 +68,12 @@ BackgroundModel {
   height: 200px; /* Adjust height as needed */
   z-index: 1; 
 }
+
+@media (max-width: 600px) {
+  .main-logo {
+    width: 90%; /* Adjust the width for smaller screens */
+    top: 10%;
+  }
+}
+
 </style>
