@@ -35,9 +35,7 @@ export default {
     },
   },
   mounted() {
-    console.log("App mounted");
     this.$refs.app.addEventListener('scroll', this.handleScroll);
-    console.log('Scroll event listener added');
   },
   beforeUnmount() {
     this.$refs.app.removeEventListener('scroll', this.handleScroll);
@@ -58,22 +56,22 @@ export default {
 
 .main-logo {
   position: absolute;
-  top: -75px;
+  top: -10vh;
   left: 50%;
   transform: translateX(-50%) translateY(150%);
   z-index: 9999;
   mix-blend-mode: difference;
   filter: invert(1);
-  pointer-events: none; /* Make the logo non-interactive */
-  user-select: none; /* Prevent text selection */
+  pointer-events: none;
+  user-select: none;
 }
 
 BackgroundModel {
   position: absolute;
-  top: 50px; /* Adjust to place it below the menu */
+  top: 50px; 
   left: 0;
   width: 100%;
-  height: 200px; /* Adjust height as needed */
+  height: 200px; 
   z-index: 1;
 }
 

@@ -7,7 +7,7 @@
         <p
           v-typewriter="{
             speed: 2,
-            text: 'I\'m Robin, A software engineer based out of Charlotte, North Carolina',
+            text: 'I\'m Robert, A software engineer based out of Charlotte, North Carolina',
           }"
         ></p>
         <p

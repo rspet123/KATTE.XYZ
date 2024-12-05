@@ -29,22 +29,19 @@ export default {
       consoleOutput: "",
       placeholderText: ">_",
       autoFillCommands: ["help", "about", "portfolio", "contact", "tech"],
-      hiOptions: ["Hello", "Hi", "Hey", "What's up", "How we doing?", "你好", "नमस्ते", "안녕"],
+      hiOptions: ["Hello", "Hi", "Hey", "What's up", "你好", "नमस्ते", "안녕", "Hola", "Salut", "Ciao", "こんにちは", "Hallo", "Hej", "Hei", "Hoi", "Olá", "Привет","สวัสดี"],
       commands: {
         help: () => {
           this.consoleOutput =
             "Available commands: about, portfolio, contact, tech";
         },
         about: () => {
-          // Navigate to the about page
           this.$router.push("/about");
         },
         portfolio: () => {
-          // Navigate to the portfolio page
           this.$router.push("/portfolio");
         },
         contact: () => {
-          // Navigate to the contact page
           this.$router.push("/contact");
         },
         tech: () => {

@@ -91,7 +91,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
-  width: 100%;
+  width: 80%;
   max-width: 1800px;
 }
 
@@ -99,5 +99,12 @@ export default {
   align-items: flex-start;
   text-align: left; /* Ensure text alignment is left */
   padding: 5vh;
+}
+
+@media screen and (max-width: 600px) {
+  .projects-grid {
+    width: 100%;
+  }
+  
 }
 </style>
