@@ -149,7 +149,6 @@ export default {
       // Default is -15, 7, -10, Zero Rot is 0, 7, 20 so we need to adjust the x and z
       this.camera.position.x = (Math.sin(newVal*2) * 20) - 15;
       this.camera.position.z = (Math.cos(newVal*2) * 20) - 30;
-      console.log("New X,Y,Z: ", this.camera.position.x, this.camera.position.y, this.camera.position.z);
       this.camera.lookAt(0, 0, 0);
     },
   },
