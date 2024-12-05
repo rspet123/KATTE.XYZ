@@ -54,7 +54,6 @@ export default {
   overflow-y: auto;
   scrollbar-gutter: stable both-edges;
   padding-left: 0%;
-  padding-right: 5%;
 }
 
 .main-logo {
