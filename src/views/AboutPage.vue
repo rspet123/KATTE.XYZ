@@ -73,6 +73,8 @@ export default {
   .about-text {
     margin-left: 0; 
     margin-top: 20px;
+    mix-blend-mode: difference;
+    filter: invert(1);
   }
 }
 

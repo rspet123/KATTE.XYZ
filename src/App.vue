@@ -1,32 +1,46 @@
 <template>
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
-  <div id="app">
-    <BackgroundModel />
-    <img alt="KATTE logo" class="main-logo" src="./assets/logo.png">
+  <div id="app" ref="app">
+    <BackgroundModel :rotation-percent="scrollPercent" />
+    <img alt="KATTE logo" class="main-logo" src="./assets/logo.png" />
     <SideMenu />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import BackgroundModel from './components/BackgroundModel.vue';
-import SideMenu from './components/SideMenu.vue';
+import BackgroundModel from "./components/BackgroundModel.vue";
+import SideMenu from "./components/SideMenu.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     BackgroundModel,
-    SideMenu,
+    SideMenu, 
+  },
+  data () {
+    return {
+      scrollPercent: 0,
+    };
   },
   methods: {
-    addGlitch(event) {
-      event.target.classList.add('glitch');
+    handleScroll() {
+      const appElement = this.$refs.app;
+      const scrollTop = appElement.scrollTop;
+      const scrollHeight = appElement.scrollHeight - appElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight);
+      this.scrollPercent = scrollPercent;
     },
-    removeGlitch(event) {
-      event.target.classList.remove('glitch');
-    },
+  },
+  mounted() {
+    console.log("App mounted");
+    this.$refs.app.addEventListener('scroll', this.handleScroll);
+    console.log('Scroll event listener added');
+  },
+  beforeUnmount() {
+    this.$refs.app.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
@@ -35,7 +49,7 @@ export default {
 #app {
   position: relative;
   width: 99%;
-  height: 96vh; 
+  height: 96vh;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-gutter: stable both-edges;
@@ -45,10 +59,10 @@ export default {
 
 .main-logo {
   position: absolute;
-  top: -75px; 
+  top: -75px;
   left: 50%;
   transform: translateX(-50%) translateY(150%);
-  z-index: 9999; 
+  z-index: 9999;
   mix-blend-mode: difference;
   filter: invert(1);
   pointer-events: none; /* Make the logo non-interactive */
@@ -61,7 +75,7 @@ BackgroundModel {
   left: 0;
   width: 100%;
   height: 200px; /* Adjust height as needed */
-  z-index: 1; 
+  z-index: 1;
 }
 
 /* Smaller screens */
@@ -77,5 +91,4 @@ BackgroundModel {
     height: 100px; /* Adjust height for smaller screens */
   }
 }
-
 </style>

@@ -9,8 +9,21 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default {
   name: "BackgroundModel",
+  props: {
+    rotationPercent: {
+      type: Number,
+      default: 0,
+    },
+  },
   mounted() {
     this.initThree();
+  },
+  data () {
+    return {
+      camera: null,
+      scene: null,
+      renderer: null,
+    };
   },
   methods: {
     initThree() {
@@ -24,10 +37,12 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = -20;
+      camera.position.x = -15;
+      camera.position.z = -10;
       camera.position.y = 7;
-      camera.position.x = 0;
       camera.lookAt(0, 0, 0);
+
+      this.camera = camera;
 
       // Create the renderer
       const renderer = new THREE.WebGLRenderer();
@@ -106,9 +121,7 @@ export default {
         // camera.position.z = Math.cos(Date.now() * 0.0002) * 20;
 
         // Rotate Camera to aim at the side of the car
-        camera.position.x = -15;
-        camera.position.z = -10;
-        camera.position.y = 7;
+
         
         camera.lookAt(0, 0, 0);
 
@@ -129,6 +142,15 @@ export default {
       // Listen for key events
       window.addEventListener("keydown", this.handleKeyDown);
       window.addEventListener("keyup", this.handleKeyUp);
+    },
+  },
+  watch: {
+    rotationPercent: function (newVal) {
+      // Default is -15, 7, -10, Zero Rot is 0, 7, 20 so we need to adjust the x and z
+      this.camera.position.x = (Math.sin(newVal*2) * 20) - 15;
+      this.camera.position.z = (Math.cos(newVal*2) * 20) - 30;
+      console.log("New X,Y,Z: ", this.camera.position.x, this.camera.position.y, this.camera.position.z);
+      this.camera.lookAt(0, 0, 0);
     },
   },
 };

@@ -1,14 +1,14 @@
 <template>
   <div class="content-page">
     <h1><TerminalCursor /> Projects</h1>
-    <p
+    <h4
       v-typewriter="{
         speed: 2,
         text: 'Here\'s what I\'ve been working on recently. Most of my projects are video game related, but I\'m always looking for new tech to learn and new projects to work on.',
       }"
     >
       <TerminalCursor />
-    </p>
+    </h4>
     <div class="projects-grid">
       <ProjectCard
         v-for="project in projects"
@@ -81,6 +81,8 @@ export default {
       ],
     };
   },
+  methods: {},
+  mounted() {},
 };
 </script>
 
@@ -91,5 +93,11 @@ export default {
   gap: 16px;
   width: 100%;
   max-width: 1800px;
+}
+
+.about-text {
+  align-items: flex-start;
+  text-align: left; /* Ensure text alignment is left */
+  padding: 5vh;
 }
 </style>

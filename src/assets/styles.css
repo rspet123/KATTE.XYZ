@@ -25,6 +25,13 @@ onto all text elements to make them white on black background
     margin: 10px 0;
 }
 
+
+/* inverted text */
+.content-page h1, .content-page h4 {
+    mix-blend-mode: difference;
+    filter: invert(1);
+}
+
 #app::-webkit-scrollbar {
     width: 12px; 
   }
