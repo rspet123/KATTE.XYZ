@@ -108,16 +108,18 @@ export default {
 }
 
 /* Small Screens */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .side-menu-link {
     font-size: 20px !important; 
+    padding: 8px !important;;
   }
 }
 
 /* Even Smaller Screens */
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .side-menu-link {
     font-size: 16px !important; 
+    padding: 6px !important;
   }
 }
 
