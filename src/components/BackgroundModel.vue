@@ -57,9 +57,11 @@ export default {
       // Create the scene
       const scene = new THREE.Scene();
 
+      let initialFOV = window.innerWidth < 768 ? 95 : 55;
+
       // Create the camera
       const camera = new THREE.PerspectiveCamera(
-        55,
+        initialFOV,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
@@ -170,7 +172,9 @@ export default {
 
       // Handle window resizing
       window.addEventListener("resize", () => {
+        const newFOV = window.innerWidth < 768 ? 90 : 55;
         camera.aspect = window.innerWidth / window.innerHeight;
+        camera.fov = newFOV;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
       });
@@ -203,5 +207,13 @@ export default {
   position: relative;
   top: -50px;
   z-index: -1;
+}
+
+@media screen and (max-width: 600px) {
+  .three-container {
+    max-height: 30vh;
+    top: -20vh;
+  }
+  
 }
 </style>
