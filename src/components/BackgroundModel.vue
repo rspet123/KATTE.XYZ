@@ -201,7 +201,7 @@ export default {
   watch: {
     rotationPercent(newVal) {
       const radius = 20; // Distance from the car
-      const angle = (newVal-.33) * 2 * Math.PI; // Convert percent to radians
+      const angle = (-newVal-.33) * 2 * Math.PI; // Convert percent to radians
       this.camera.position.x = Math.sin(angle) * radius;
       this.camera.position.z = Math.cos(angle) * radius;
       this.camera.position.y = 7; // Keep the y position constant
