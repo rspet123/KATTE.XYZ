@@ -108,8 +108,8 @@ export default {
         0.1,
         1000
       );
-      camera.position.x = -15;
-      camera.position.z = -10;
+      camera.position.x = -17.5;
+      camera.position.z = -9.5;
       camera.position.y = 7;
       camera.lookAt(0, 0, 0);
 
@@ -127,23 +127,11 @@ export default {
       // Load Model
       let car_model = null;
       loader.load(
-        "/models/source/AE86A.glb",
+        "/models/source/AE86B.glb",
         (gltf) => {
           car_model = gltf.scene;
 
-
-          // let randomColor = Math.floor(Math.random() * 16777215); // Don't use this right now?
-          let randomColor = 0xffffff;
-
-          gltf.scene.traverse((child) => {
-            if (child.isMesh) {
-              child.material.color.set(randomColor);
-            }
-          }); 
-
           scene.add(car_model);
-
-          gltf.scene.position.set(-40, 0, -45); // -40, 0, -45 is "zero" position
 
           gltf.scene.scale.set(1, 1, 1);
 
@@ -175,14 +163,6 @@ export default {
       // Animate the cube (rotation)
       const animate = () => {
         requestAnimationFrame(animate);
-        // controls.update();
-        // this.moveCar(); 
-
-        // rotate the light around the car
-        // light.position.x = Math.sin(Date.now() * 0.001) * 2;
-        // light.position.z = Math.cos(Date.now() * 0.001) * 2;
-
-        // Pass light over the car, look like it's driving
 
         light.position.y = 15
         // light.position.z += 0.1;
@@ -190,21 +170,6 @@ export default {
           this.moveLightToZ(this.lightTargetPositionZ);
         }
 
-        // Start moving the light to the target position
-        //if (light.position.z < this.lightTargetPositionZ) {
-        //  light.position.z += 0.1;
-        //} else if (light.position.z > this.lightTargetPositionZ) {
-        //  light.position.z -= 0.1;
-        //}
-
-
-        // Rotate the camera around the car
-        // camera.position.x = Math.sin(Date.now() * 0.0002) * 20;
-        // camera.position.z = Math.cos(Date.now() * 0.0002) * 20;
-
-        // Rotate Camera to aim at the side of the car
-
-        
         camera.lookAt(0, 0, 0);
 
         // Copy camera position to spotlight
@@ -234,11 +199,17 @@ export default {
     }
   },
   watch: {
-    rotationPercent: function (newVal) {
-      // Default is -15, 7, -10, Zero Rot is 0, 7, 20 so we need to adjust the x and z
-      this.camera.position.x = (Math.sin(newVal*2) * 20) - 15;
-      this.camera.position.z = (Math.cos(newVal*2) * 20) - 30;
-      this.camera.lookAt(0, 0, 0);
+    rotationPercent(newVal) {
+      const radius = 20; // Distance from the car
+      const angle = (newVal-.33) * 2 * Math.PI; // Convert percent to radians
+      this.camera.position.x = Math.sin(angle) * radius;
+      this.camera.position.z = Math.cos(angle) * radius;
+      this.camera.position.y = 7; // Keep the y position constant
+      if (this.car) {
+        this.camera.lookAt(this.car.position);
+      } else {
+        this.camera.lookAt(0, 0, 0);
+      }
     },
   },
 };
