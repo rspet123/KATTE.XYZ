@@ -41,7 +41,6 @@ export default {
 
 @media (max-width: 600px) {
   .portrait-frame {
-    border: 2px solid #000;
     width: 20vh;
     height: 20vh;
   }
