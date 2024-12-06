@@ -38,9 +38,55 @@ export default {
         this.lightTargetPositionZ = 100;
       }
     });
+    EventBus.on("setCarRed", () => {
+      if (this.car) {
+        this.car.traverse((child) => {
+          if (child.isMesh) {
+            child.material.color.set(0xff0000);
+          }
+        });
+      }
+    });
+    EventBus.on("setCarBlack", () => {
+      if (this.car) {
+        this.car.traverse((child) => {
+          if (child.isMesh) {
+            child.material.color.set(0x000000);
+          }
+        });
+      }
+    });
+    EventBus.on("setCarPink", () => {
+      if (this.car) {
+        this.car.traverse((child) => {
+          if (child.isMesh) {
+            child.material.color.set(0xff00ff);
+          }
+        });
+      }
+    });
+    EventBus.on("setCarWhite", () => {
+      if (this.car) {
+        this.car.traverse((child) => {
+          if (child.isMesh) {
+            child.material.color.set(0xffffff);
+          }
+        });
+      }
+    });
+    EventBus.on("setCarRandom", () => {
+      if (this.car) {
+        this.car.traverse((child) => {
+          if (child.isMesh) {
+            child.material.color.set(Math.floor(Math.random() * 16777215));
+          }
+        });
+      }
+    });
   },
   data () {
     return {
+      car: null,
       camera: null,
       light: null,
       scene: null,
@@ -82,7 +128,7 @@ export default {
       let car_model = null;
       loader.load(
         "/models/source/AE86A.glb",
-        function (gltf) {
+        (gltf) => {
           car_model = gltf.scene;
 
 
@@ -93,13 +139,15 @@ export default {
             if (child.isMesh) {
               child.material.color.set(randomColor);
             }
-          });
+          }); 
 
           scene.add(car_model);
 
           gltf.scene.position.set(-40, 0, -45); // -40, 0, -45 is "zero" position
 
           gltf.scene.scale.set(1, 1, 1);
+
+          this.car = car_model;
         },
         undefined,
         (error) => {

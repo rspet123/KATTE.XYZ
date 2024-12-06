@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { EventBus } from '../eventBus';
+
 export default {
   name: "HomePage",
   data() {
@@ -36,12 +38,15 @@ export default {
             "Available commands: about, portfolio, contact, tech";
         },
         about: () => {
+          EventBus.emit('goAbout')
           this.$router.push("/about");
         },
         portfolio: () => {
+          EventBus.emit('goPortfolio')
           this.$router.push("/portfolio");
         },
         contact: () => {
+          EventBus.emit('goContact')
           this.$router.push("/contact");
         },
         tech: () => {
@@ -68,6 +73,21 @@ export default {
         },
         dogmeat: () => {
           this.consoleOutput = "Hello my love ♥";
+        },
+        red: () => {
+          EventBus.emit("setCarRed");
+        },
+        black: () => {
+          EventBus.emit("setCarBlack");
+        },
+        pink: () => {
+          EventBus.emit("setCarPink");
+        },
+        white: () => {
+          EventBus.emit("setCarWhite");
+        },
+        random: () => {
+          EventBus.emit("setCarRandom");
         },
       },
     };
@@ -128,7 +148,7 @@ export default {
   width: 80%;
   max-width: 800px;
   background-color: #000;
-  border: 1px solid #00ff00;
+  border: 1px solid #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-sizing: border-box;
@@ -139,7 +159,7 @@ export default {
   top: 32px;
   width: 100%;
   background-color: #000;
-  color: #00ff00;
+  color: #ffffff;
   border: none;
   outline: none;
   font-family: "Courier New", Courier, monospace;
@@ -153,7 +173,7 @@ export default {
   top: 32px;
   width: 100%;
   background-color: #000;
-  color: #00ff00;
+  color: #ffffff;
   border: none;
   outline: none;
   font-family: "Courier New", Courier, monospace;
@@ -168,7 +188,7 @@ export default {
   top: 32px;
   width: 100%;
   background-color: #000;
-  color: #00ff00;
+  color: #ffffff;
   border: none;
   outline: none;
   font-family: "Courier New", Courier, monospace;
@@ -176,7 +196,7 @@ export default {
 }
 
 .terminal-input::placeholder {
-  color: #00ff00;
+  color: #ffffff;
 }
 
 .autocomplete-dropdown {
@@ -185,7 +205,7 @@ export default {
   top: 56px;
   width: 99%;
   background-color: #ffffff;
-  border: 1px solid #00ff00;
+  border: 1px solid #000000;
   z-index: 10;
   list-style: none;
   padding: 0;
@@ -198,7 +218,7 @@ export default {
 }
 
 .autocomplete-dropdown li:hover {
-  background-color: #00ff00;
+  background-color: #b1b1b1;
   color: #000;
 }
 </style>

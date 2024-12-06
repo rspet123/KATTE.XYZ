@@ -1,7 +1,7 @@
 <template>
   <div class="content-page">
     <h1><TerminalCursor /> Contact</h1>
-    <div v-typewriter="{ text: 'Contact Me Here... Thanks.', seconds: 2 }"></div>
+    <h4 v-typewriter="{ text: 'Contact Me Here... Thanks.', seconds: 2 }"></h4>
     <div class="contact-links">
       <a
         href="https://github.com/rspet123"
