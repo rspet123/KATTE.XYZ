@@ -11,28 +11,21 @@
 </template>
 
 <script>
-function throttle(fn, wait) {
-  // Throttle func for anim
-  let lastTime = 0;
-  return function (...args) {
-    const now = new Date().getTime();
-    if (now - lastTime >= wait) {
-      lastTime = now;
-      return fn(...args);
-    }
-  };
-}
 export default {
   name: "SculptureText",
   data() {
     return {
       text: "KATTE",
+      lastAnimTime: 0,
     };
   },
   methods: {
     handleMouseMove(event) {
       requestAnimationFrame(() => {
         const items = document.querySelectorAll(".grid-item");
+        if (Date.now() - this.lastAnimTime < 1000 / 16) {
+          return;
+        }
         items.forEach((item) => {
           const rect = item.getBoundingClientRect();
           const dx = event.clientX - (rect.left + rect.width / 2);
@@ -45,6 +38,7 @@ export default {
             (dy / dist) * moveDist
           }px)`;
           item.style.color = `rgb(${255 - (dist*2)}, ${255 - (dist*2)}, ${255 - (dist*2)})`;
+          this.lastAnimTime = Date.now();
         });
       });
     },
@@ -55,9 +49,6 @@ export default {
         item.style.color = ""; 
       });
     },
-    throttledHandleMouseMove: throttle(function (event) {
-      this.handleMouseMove(event);
-    }, 16),
   },
 };
 </script>
