@@ -6,6 +6,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 //import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { EventBus } from '../eventBus';
 
 export default {
   name: "BackgroundModel",
@@ -17,12 +18,38 @@ export default {
   },
   mounted() {
     this.initThree();
+    EventBus.on("goHome", () => {
+      console.log("Going Home");
+      if (this.light) {
+        this.lightTargetPositionZ = 0;
+      }
+    });
+    EventBus.on("goAbout", () => {
+      console.log("Going About");
+      if (this.light) {
+        this.lightTargetPositionZ = 15;
+      }
+    });
+    EventBus.on("goPortfolio", () => {
+      console.log("Going Portfolio");
+      if (this.light) {
+        this.lightTargetPositionZ = 40;
+      }
+    });
+    EventBus.on("goContact", () => {
+      console.log("Going Contact");
+      if (this.light) {
+        this.lightTargetPositionZ = 100;
+      }
+    });
   },
   data () {
     return {
       camera: null,
+      light: null,
       scene: null,
       renderer: null,
+      lightTargetPositionZ: 0,
     };
   },
   methods: {
@@ -96,10 +123,11 @@ export default {
       spotLight.position.set(0, 5, 5);
       spotLight.castShadow = true; 
       scene.add(spotLight);
+      this.light = light;
 
 
       // Animate the cube (rotation)
-      const animate = function () {
+      const animate = () => {
         requestAnimationFrame(animate);
         // controls.update();
         // this.moveCar(); 
@@ -109,13 +137,21 @@ export default {
         // light.position.z = Math.cos(Date.now() * 0.001) * 2;
 
         // Pass light over the car, look like it's driving
-        light.position.y = 15
-        light.position.z += 0.1;
 
-        // If the light is too far, reset it
-        if (light.position.z > 100) {
-          light.position.z = -100;
+        light.position.y = 15
+        // light.position.z += 0.1;
+        if (this.lightTargetPositionZ !== this.light.position.z) {
+          this.moveLightToZ(this.lightTargetPositionZ);
         }
+
+        // Start moving the light to the target position
+        //if (light.position.z < this.lightTargetPositionZ) {
+        //  light.position.z += 0.1;
+        //} else if (light.position.z > this.lightTargetPositionZ) {
+        //  light.position.z -= 0.1;
+        //}
+
+
         // Rotate the camera around the car
         // camera.position.x = Math.sin(Date.now() * 0.0002) * 20;
         // camera.position.z = Math.cos(Date.now() * 0.0002) * 20;
@@ -139,10 +175,15 @@ export default {
         renderer.setSize(window.innerWidth, window.innerHeight);
       });
 
-      // Listen for key events
-      window.addEventListener("keydown", this.handleKeyDown);
-      window.addEventListener("keyup", this.handleKeyUp);
     },
+    moveLightToZ(zValue){
+      // moves light to z value over time
+      if (this.light.position.z < zValue) {
+        this.light.position.z += 0.1;
+      } else if (this.light.position.z > zValue) {
+        this.light.position.z -= 0.1;
+      }
+    }
   },
   watch: {
     rotationPercent: function (newVal) {

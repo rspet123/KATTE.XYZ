@@ -51,7 +51,7 @@ export default {
           link: "https://github.com/rspet123/apexauto",
           technologies: ["Vue.js", "Python", "SQL", "CV2"],
           isPrivate: true,
-          more: "I made this tool on the request of a friend who was working as an analyst for a pro Apex Legends team. It's a full stack project that handles data collection, processing & analysis, and can present an analyst/coach and their players actionable information much quicker than a human analyst would be able to. He estimates it saves him over 30 hours a week.",
+          more: "I made this tool on the request of a friend who was working as an analyst for a pro Apex Legends team. It's a full stack project that handles data collection, processing & analysis, and can present an analyst or coach and their players with actionable information much quicker than a human analyst would be able to. He estimates it saves him over 30 hours a week.",
         },
         {
           title: "NinerScrims",
@@ -68,7 +68,7 @@ export default {
           link: "",
           technologies: ["Python", "MongoDB", "Discord API", "SKLearn"],
           isPrivate: true,
-          more: "If you know anything about EVE Online, you'd know it's an incredibly serious and competitive game, and intelligence & counter-intelligence is a big part of that, especially out of the game itself. I made this tool to help a friend who was leading a large alliance track enemy spies. It uses the Discord API to track activity and uses SKLearn to analyze the data. I can't tell you how it works, but it's pretty cool, and has already exposed a few spies.",
+          more: "If you know anything about EVE Online, you'd know it's an incredibly serious and competitive game, and intelligence & counter-intelligence is a big part of that, especially out of the game itself. I made this tool to help a friend who was leading a large alliance track enemy spies. It uses the Discord API to track activity and uses SKLearn to analyze the data. I can't tell you how it works here, but it's pretty interesting project, and has already been quite successful.",
         },
         {
             title: "Atlas",

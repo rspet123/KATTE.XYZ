@@ -2,16 +2,18 @@
   <div class="side-menu">
     <ul>
       <li class="side-menu-link" @click="goBack">↼</li>
-      <li><router-link class="side-menu-link" to="/">Home</router-link></li>
-      <li><router-link class="side-menu-link" to="/about">About</router-link></li>
-      <li><router-link class="side-menu-link" to="/portfolio">Portfolio</router-link></li>
-      <li><router-link class="side-menu-link" to="/contact">Contact</router-link></li>
+      <li class="side-menu-link" @click="goHome">Home</li>
+      <li class="side-menu-link" @click="goAbout">About</li>
+      <li class="side-menu-link" @click="goPortfolio">Portfolio</li>
+      <li class="side-menu-link" @click="goContact">Contact</li>
       <li class="side-menu-link" @click="goForward">⇁</li>
     </ul>
   </div>
 </template>
 
 <script>
+import { EventBus } from '../eventBus';
+
 export default {
   name: 'SideMenu',
   data() {
@@ -32,11 +34,28 @@ export default {
       }
     },
     goBack() {
+      
       this.$router.back();
     },
     goForward() {
       this.$router.forward();
     },
+    goHome() {
+      EventBus.emit('goHome')
+      this.$router.push('/');
+    },
+    goAbout() {
+      EventBus.emit('goAbout')
+      this.$router.push('/about');
+    },
+    goPortfolio() {
+      EventBus.emit('goPortfolio')
+      this.$router.push('/portfolio');
+    },
+    goContact() {
+      EventBus.emit('goContact')
+      this.$router.push('/contact');
+    }
   }
 };
 </script>
