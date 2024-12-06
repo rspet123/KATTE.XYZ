@@ -13,7 +13,7 @@
               v-for="tech in technologies"
               :key="tech"
               class="tech-chip"
-              :style="{ backgroundColor: techColorMap[tech] || 'grey' }"
+              :style="{ boxShadow: `0 0 10px ${ techColorMap[tech]}` || '0 0 10px grey' }"
             >
               {{ tech }}
             </span>
@@ -52,6 +52,7 @@ export default {
         MongoDB: "#00ED64",
         "Three.js": "#FF5555",
         "Discord API": "#5865F2",
+        CV2: "#FF6F00",
       },
     };
   },
@@ -127,7 +128,6 @@ export default {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border: 1px solid #000000;
   padding: 16px;
   box-sizing: border-box;
   display: flex;
@@ -136,14 +136,27 @@ export default {
 }
 
 .front {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: #000000;
 }
 
 .back {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: #000000;
   transform: rotateY(180deg);
+  padding: 5vh;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid black; /* Adjust the border color and width as needed */
+  clip-path: polygon(70% 0, 100% 0, 100% 30%, 30% 100%, 0 100%, 0 70%);
+  pointer-events: none; /* Ensure the border does not interfere with interactions */
 }
 
 .project-card h2 {
@@ -174,10 +187,7 @@ export default {
   padding: 4px 8px;
   margin: 4px;
   font-size: 12px;
-}
-
-.project-card-container:hover .project-card {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #a1a1a1;
 }
 
 .more-info-content {
@@ -190,5 +200,12 @@ export default {
 
 .card-bottom-anchor {
   margin-top: auto;
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .project-card p {
+    font-size: 14px;
+  }
 }
 </style>

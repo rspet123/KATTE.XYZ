@@ -68,7 +68,7 @@ export default {
           link: "",
           technologies: ["Python", "MongoDB", "Discord API", "SKLearn"],
           isPrivate: true,
-          more: "If you know anything about EVE Online, you'd know it's an incredibly serious and competitive game, and intelligence & counter-intelligence is a big part of that, especially out of the game itself. I made this tool to help a friend who was leading a large alliance track enemy spies. It uses the Discord API to track activity and uses SKLearn to analyze the data. I can't tell you how it works here, but it's pretty interesting project, and has already been quite successful.",
+          more: "EVE Online is incredibly serious and competitive game, and counter-intelligence is a big part of that, especially out of the game itself. I made this tool to help a friend who was leading a large alliance track enemy spies. It uses the Discord API to track activity and uses SKLearn to analyze the data. I can't tell you how it works here, but it has already been quite successful.",
         },
         {
             title: "Atlas",

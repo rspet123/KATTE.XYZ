@@ -22,8 +22,9 @@ export default {
   width: 200px; 
   height: 200px;
   border-radius: 50%;
-  border: 5px solid #000;
-  background-color: whitesmoke;
+  background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+  background-size: 600% 600%;
+  animation: flowingGradient 20s ease infinite;
   overflow: hidden;
 }
 
@@ -43,6 +44,18 @@ export default {
     border: 2px solid #000;
     width: 20vh;
     height: 20vh;
+  }
+}
+
+@keyframes flowingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

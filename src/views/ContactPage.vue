@@ -59,6 +59,7 @@ export default {
   font-size: 64px;
   display: flex;
   align-items: center;
+  transition: all 0.2s;
 }
 
 .contact-link i {
