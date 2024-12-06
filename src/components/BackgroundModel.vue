@@ -19,25 +19,21 @@ export default {
   mounted() {
     this.initThree();
     EventBus.on("goHome", () => {
-      console.log("Going Home");
       if (this.light) {
         this.lightTargetPositionZ = 0;
       }
     });
     EventBus.on("goAbout", () => {
-      console.log("Going About");
       if (this.light) {
         this.lightTargetPositionZ = 15;
       }
     });
     EventBus.on("goPortfolio", () => {
-      console.log("Going Portfolio");
       if (this.light) {
         this.lightTargetPositionZ = 40;
       }
     });
     EventBus.on("goContact", () => {
-      console.log("Going Contact");
       if (this.light) {
         this.lightTargetPositionZ = 100;
       }
@@ -115,7 +111,7 @@ export default {
       );
 
       // Add lighting above the car
-      const light = new THREE.DirectionalLight(0xffffff, 1);
+      const light = new THREE.DirectionalLight(0xffffff, 2);
       light.position.set(0, 1, 1).normalize();
       // light.castShadow = true;
       scene.add(light);
