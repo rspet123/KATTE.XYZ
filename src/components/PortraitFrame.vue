@@ -25,8 +25,14 @@ export default {
   background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
   background-size: 600% 600%;
   animation: flowingGradient 20s ease infinite;
+  transition: all 0.3s;
   overflow: hidden;
 }
+
+.portrait-frame:hover {
+  box-shadow: 5px 5px 5px #717171;
+}
+
 
 .portrait-image {
   width: 100%;

@@ -67,7 +67,13 @@ export default {
   margin-right: 8px;
 }
 
+.contact-link i {
+  font-size: 64px;
+  margin-right: 8px;
+}
+
 .contact-link:hover {
   scale: 1.1;
+  text-shadow: 5px 5px 5px #707070;
 }
 </style>

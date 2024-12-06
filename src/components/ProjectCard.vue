@@ -13,7 +13,7 @@
               v-for="tech in technologies"
               :key="tech"
               class="tech-chip"
-              :style="{ boxShadow: `0 0 10px ${ techColorMap[tech]}` || '0 0 10px grey' }"
+              :style="{ boxShadow: `3px 3px 3px ${ techColorMap[tech]}` || '3px 3px 3px #717171' }"
             >
               {{ tech }}
             </span>
@@ -133,6 +133,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensure content is spaced appropriately */
+  align-items: center;
 }
 
 .front {
@@ -145,6 +146,7 @@ export default {
   color: #000000;
   transform: rotateY(180deg);
   padding: 5vh;
+  align-items: center;
 }
 
 .project-card::before {
@@ -187,11 +189,14 @@ export default {
   padding: 4px 8px;
   margin: 4px;
   font-size: 12px;
-  background-color: #a1a1a1;
+  background-color: #aaaaaa;
 }
 
 .more-info-content {
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .spacer {
