@@ -1,12 +1,13 @@
 <template>
   <div class="content-page">
     <h1><TerminalCursor /> Contact</h1>
-    <div v-typewriter="{ text: 'Contact Me Here... Thanks', seconds: 2 }"></div>
+    <div v-typewriter="{ text: 'Contact Me Here... Thanks.', seconds: 2 }"></div>
     <div class="contact-links">
       <a
         href="https://github.com/rspet123"
         target="_blank"
         class="contact-link"
+        title="GitHub"
       >
         <i class="fab fa-github"></i>
       </a>
@@ -14,11 +15,15 @@
         href="https://www.linkedin.com/in/robert-spencer-aa0102207"
         target="_blank"
         class="contact-link"
+        title="LinkedIn"
       >
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="mailto:rspet123@gmail.com" class="contact-link">
+      <a href="mailto:rspet123@gmail.com" class="contact-link" title="Email">
         <i class="fas fa-envelope"></i>
+      </a>
+      <a href="/resume.pdf" class="contact-link" download title="Resume">
+        <i class="fas fa-file"></i>
       </a>
     </div>
   </div>
