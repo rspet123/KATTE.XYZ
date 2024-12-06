@@ -22,15 +22,18 @@ export default {
   width: 200px; 
   height: 200px;
   border-radius: 50%;
-  background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+  background: linear-gradient(270deg, #ffffff, #717171, #000000);
+  transition: all 0.3s;
   background-size: 600% 600%;
   animation: flowingGradient 20s ease infinite;
-  transition: all 0.3s;
   overflow: hidden;
 }
 
 .portrait-frame:hover {
   box-shadow: 5px 5px 5px #717171;
+  background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+  background-size: 300% 300%;
+  animation: flowingGradient 20s ease infinite;
 }
 
 
