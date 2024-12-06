@@ -1,12 +1,12 @@
 <template>
   <div class="side-menu">
     <ul>
-      <li class="side-menu-link" @click="goBack">↼</li>
+      <li class="side-menu-link arrow" @click="goBack">↼</li>
       <li class="side-menu-link" @click="goHome">Home</li>
       <li class="side-menu-link" @click="goAbout">About</li>
       <li class="side-menu-link" @click="goPortfolio">Portfolio</li>
       <li class="side-menu-link" @click="goContact">Contact</li>
-      <li class="side-menu-link" @click="goForward">⇁</li>
+      <li class="side-menu-link arrow" @click="goForward">⇁</li>
     </ul>
   </div>
 </template>
@@ -110,16 +110,22 @@ export default {
 /* Small Screens */
 @media (max-width: 768px) {
   .side-menu-link {
-    font-size: 20px !important; 
-    padding: 8px !important;;
+    font-size: 24px !important; 
+    padding: 8px !important;
+  }
+  .arrow {
+    display: none !important;
   }
 }
 
 /* Even Smaller Screens */
 @media (max-width: 450px) {
   .side-menu-link {
-    font-size: 16px !important; 
+    font-size: 20px !important; 
     padding: 6px !important;
+  }
+  .arrow {
+    display: none !important;
   }
 }
 
