@@ -190,6 +190,8 @@ export default {
   margin: 4px;
   font-size: 12px;
   background-color: #aaaaaa;
+  transition: all 0.3s;
+  
 }
 
 .more-info-content {
@@ -197,6 +199,10 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.project-card .back p {
+  font-size: 14px;
 }
 
 .spacer {
@@ -207,10 +213,17 @@ export default {
   margin-top: auto;
 }
 
+/* The Tech Chips will Come Forward a bit when the card is hovered */
+.project-card:hover .tech-chip {
+  scale: 1.05;
+  box-shadow: 10px 10px 10px #717171 !important;
+}
+
 /* Small Screens */
 @media (max-width: 768px) {
   .project-card p {
     font-size: 14px;
   }
 }
+
 </style>

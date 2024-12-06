@@ -17,14 +17,19 @@
     <div class="terminal-container">
       <div class="terminal-output" v-html="consoleOutput"></div>
     </div>
+    <SculptureText />
   </div>
 </template>
 
 <script>
 import { EventBus } from '../eventBus';
+import SculptureText from "../components/SculptureText.vue";
 
 export default {
   name: "HomePage",
+  components: {
+    SculptureText,
+  },
   data() {
     return {
       consoleInput: "",
