@@ -97,7 +97,7 @@ export default {
 
 .about-text {
   align-items: flex-start;
-  text-align: left; /* Ensure text alignment is left */
+  text-align: left;
   padding: 5vh;
 }
 

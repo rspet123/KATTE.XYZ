@@ -21,6 +21,7 @@ export default {
   align-items: center;
   width: 200px; 
   height: 200px;
+  min-width: 200px;
   border-radius: 50%;
   background: linear-gradient(270deg, #ffffff, #717171, #000000);
   transition: all 0.3s;
