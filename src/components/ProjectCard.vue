@@ -194,6 +194,12 @@ export default {
   
 }
 
+.project-card:hover h2 {
+  background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .more-info-content {
   display: flex;
   justify-content: center;
@@ -214,9 +220,8 @@ export default {
 }
 
 /* The Tech Chips will Come Forward a bit when the card is hovered */
-.project-card:hover .tech-chip {
-  scale: 1.05;
-  box-shadow: 10px 10px 10px #717171 !important;
+.project-card .tech-chip:hover {
+  scale: 1.1;
 }
 
 /* Small Screens */

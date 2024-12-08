@@ -95,10 +95,13 @@ export default {
 }
 
 .side-menu .side-menu-link:hover {
-    color: rgba(71, 71, 71);
     letter-spacing: 0.1em;
     font-size: 68px;
-    text-shadow: 3px 3px 3px #bbbbbb;
+    background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: flowingGradient 5s ease infinite;
 }
 
 /* Medium Screens */

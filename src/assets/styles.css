@@ -48,3 +48,21 @@ onto all text elements to make them white on black background
   #app::-webkit-scrollbar-thumb:hover {
     background: #474747;
   }
+
+  a:hover {
+    background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes flowingGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

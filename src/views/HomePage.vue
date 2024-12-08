@@ -111,7 +111,7 @@ export default {
         if (this.commands[this.consoleInput]) {
           this.commands[this.consoleInput]();
         }else{
-          this.consoleOutput = "Error...";
+          this.consoleOutput = "...";
         }
         this.consoleInput = "";
       }else{

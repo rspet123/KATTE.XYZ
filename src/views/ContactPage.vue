@@ -74,6 +74,10 @@ export default {
 
 .contact-link:hover {
   scale: 1.1;
-  text-shadow: 5px 5px 5px #707070;
+  background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: flowingGradient 5s ease infinite;
 }
 </style>

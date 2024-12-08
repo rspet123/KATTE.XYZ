@@ -60,8 +60,21 @@ export default {
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
   width: 50%;
-  height: 30vh;
+  height: 25vh;
   position: relative;
+}
+
+.grid-container::before {
+  content: "";
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9vh;
+  background: linear-gradient(270deg, #ffffff, #717171, #000000);
+  background-size: 600% 600%;
+  animation: flowingGradient 20s ease infinite;
 }
 
 .grid-item {
@@ -79,9 +92,18 @@ export default {
 @media screen and (max-width: 600px) {
   .grid-container {
     width: 100%;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     height: 30vh;
+  }
+
+  .grid-container::before {
+    top: 11vh;
+    height: 18vh;
+  }
+
+  .content-page {
+    top: 2vh;
   }
     
 }
