@@ -72,8 +72,14 @@ export default {
       if (!portraitFrame) {
         return;
       }
+      const aboutText = document.querySelector('.text-with-portrait');
+      if (!aboutText) {
+        return;
+      }
+      const aboutTextHeight = aboutText.clientHeight;
+
       // This is a funny way to do this, position: fixed; might be better? Doesn't really work with the current layout though.
-      portraitFrame.style.top = `${-15+scrollPercent*28}vh`;
+      portraitFrame.style.top = `${-15+scrollPercent*aboutTextHeight*0.05}vh`;
     }
   },
 };
