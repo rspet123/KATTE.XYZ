@@ -13,6 +13,7 @@
 <script>
 import BackgroundModel from "./components/BackgroundModel.vue";
 import SideMenu from "./components/SideMenu.vue";
+import { EventBus } from "./eventBus";
 
 export default {
   name: "App",
@@ -32,6 +33,7 @@ export default {
       const scrollHeight = appElement.scrollHeight - appElement.clientHeight;
       const scrollPercent = (scrollTop / scrollHeight);
       this.scrollPercent = scrollPercent;
+      EventBus.emit('scroll', this.scrollPercent);
     },
   },
   mounted() {
