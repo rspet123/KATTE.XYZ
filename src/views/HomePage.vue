@@ -1,28 +1,34 @@
 <template>
   <div class="content-page">
-    <div class="terminal-container">
-      <textarea
-        class="terminal-input"
-        :placeholder="placeholderText"
-        @change="processInput"
-        @keydown.enter.prevent="processEnterKey"
-        v-model="consoleInput"
-      ></textarea>
-      <ul v-if="consoleInput !== ''" class="autocomplete-dropdown">
-        <li v-for="command in filterCommands()" :key="command" @click="selectCommand(command)">
-          {{ command }}
-        </li>
-      </ul>
+    <div class="terminal-io">
+      <div class="terminal-container">
+        <textarea
+          class="terminal-input"
+          :placeholder="placeholderText"
+          @change="processInput"
+          @keydown.enter.prevent="processEnterKey"
+          v-model="consoleInput"
+        ></textarea>
+        <ul v-if="consoleInput !== ''" class="autocomplete-dropdown">
+          <li
+            v-for="command in filterCommands()"
+            :key="command"
+            @click="selectCommand(command)"
+          >
+            {{ command }}
+          </li>
+        </ul>
+      </div>
+      <div class="terminal-container">
+        <div class="terminal-output" v-html="consoleOutput"></div>
+      </div>
     </div>
-    <div class="terminal-container">
-      <div class="terminal-output" v-html="consoleOutput"></div>
-    </div>
-    <SculptureText />
+    <SculptureText :text="sculpture_text" />
   </div>
 </template>
 
 <script>
-import { EventBus } from '../eventBus';
+import { EventBus } from "../eventBus";
 import SculptureText from "../components/SculptureText.vue";
 
 export default {
@@ -32,26 +38,46 @@ export default {
   },
   data() {
     return {
+      sculpture_text: "KATTE",
       consoleInput: "",
       consoleOutput: "",
       placeholderText: ">_",
       autoFillCommands: ["help", "about", "portfolio", "contact", "tech"],
-      hiOptions: ["Hello", "Hi", "Hey", "What's up", "你好", "नमस्ते", "안녕", "Hola", "Salut", "Ciao", "こんにちは", "Hallo", "Hej", "Hei", "Hoi", "Olá", "Привет","สวัสดี"],
+      hiOptions: [
+        "Hello",
+        "Hi",
+        "Hey",
+        "What's up",
+        "你好",
+        "नमस्ते",
+        "안녕",
+        "Hola",
+        "Salut",
+        "Ciao",
+        "こんにちは",
+        "Hallo",
+        "Hej",
+        "Hei",
+        "Hoi",
+        "Olá",
+        "Привет",
+        "สวัสดี",
+      ],
       commands: {
         help: () => {
           this.consoleOutput =
-            "Available commands: about, portfolio, contact, tech";
+            "Available commands: about, portfolio, contact, tech, ????, ????";
         },
         about: () => {
-          EventBus.emit('goAbout')
+          EventBus.emit("goAbout");
           this.$router.push("/about");
         },
         portfolio: () => {
-          EventBus.emit('goPortfolio')
+          EventBus.emit("goPortfolio");
           this.$router.push("/portfolio");
         },
         contact: () => {
-          EventBus.emit('goContact')
+          EventBus.emit("goContact");
           this.$router.push("/contact");
         },
         tech: () => {
@@ -59,9 +85,9 @@ export default {
             "I Currently work with Go, PHP, Python, Javascript (Vue.js), SQL, Torch, Docker, AWS, MongoDB, SKLearn";
         },
         hi: () => {
-          this.consoleOutput = this.hiOptions[
-            Math.floor(Math.random() * this.hiOptions.length)
-          ];
+          this.consoleOutput =
+            this.hiOptions[Math.floor(Math.random() * this.hiOptions.length)];
+          this.sculpture_text = "hello";
         },
         "open the pod bay doors": () => {
           this.consoleOutput = "I'm sorry, Dave. I'm afraid I can't do that.";
@@ -74,10 +100,12 @@ export default {
           this.$router.push("/secret");
         },
         katte: () => {
-          this.consoleOutput = "Katte is danish for cats, og jeg elsker katte :)";
+          this.consoleOutput =
+            "Katte is danish for cats, og jeg elsker katte :)";
         },
         dogmeat: () => {
           this.consoleOutput = "Hello my love ♥";
+          this.sculpture_text = "♥"
         },
         red: () => {
           EventBus.emit("setCarRed");
@@ -110,19 +138,19 @@ export default {
         this.consoleInput = this.consoleInput.trim().toLowerCase();
         if (this.commands[this.consoleInput]) {
           this.commands[this.consoleInput]();
-        }else{
+        } else {
           this.consoleOutput = "...";
         }
         this.consoleInput = "";
-      }else{
-        return
+      } else {
+        return;
       }
     },
     selectCommand(command) {
       this.consoleInput = command;
       this.filteredCommands = [];
       this.$nextTick(() => {
-        this.$el.querySelector('.terminal-input').focus();
+        this.$el.querySelector(".terminal-input").focus();
       });
     },
     animatePlaceholder() {
@@ -225,5 +253,9 @@ export default {
 .autocomplete-dropdown li:hover {
   background-color: #b1b1b1;
   color: #000;
+}
+
+.terminal-io {
+  padding-bottom: 5vh;  
 }
 </style>

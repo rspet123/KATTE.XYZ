@@ -5,7 +5,7 @@
     @mousemove="handleMouseMove"
   >
     <div v-for="n in 100" :key="n" class="grid-item">
-      {{ text[(n - 1) % text.length] }}
+      {{ nextText[(n - 1) % nextText.length] }}
     </div>
   </div>
 </template>
@@ -13,9 +13,15 @@
 <script>
 export default {
   name: "SculptureText",
+  props: {
+    text: {
+      type: String,
+      default: "KATTE"
+    },
+  },
   data() {
     return {
-      text: "KATTE",
+      nextText: "",
       lastAnimTime: 0,
     };
   },
@@ -49,29 +55,49 @@ export default {
         item.style.color = ""; 
       });
     },
+    animateChange() {
+      const items = document.querySelectorAll(".grid-item");
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.transform = "rotateX(90deg)";
+          setTimeout(() => {
+            item.textContent = this.text[(index) % this.text.length];
+            item.style.transform = "rotateX(0deg)";
+          }, 250);
+        }, index * 20); 
+      });
+    },
+  },
+  watch: {
+    text() {
+      this.animateChange();
+    },
+  },
+  mounted() {
+    this.nextText = this.text;
   },
 };
 </script>
 
 <style scoped>
 .grid-container {
-    padding-top: 5vh;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   width: 50%;
-  height: 25vh;
+  height: 10vh;
   position: relative;
 }
 
 .grid-container::before {
   content: "";
   position: absolute;
-  top: 8vh;
+  top: 30%;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 9vh;
+  height: 90%;
   background: linear-gradient(270deg, #ffffff, #717171, #000000);
   background-size: 600% 600%;
   animation: flowingGradient 20s ease infinite;
@@ -87,10 +113,13 @@ export default {
   user-select: none;
   mix-blend-mode: difference;
   filter: invert(1);
+  transform-origin: 50% 100%;
 }
 
 @media screen and (max-width: 600px) {
   .grid-container {
+    margin: 0;
+    padding: 0;
     width: 100%;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
@@ -98,12 +127,17 @@ export default {
   }
 
   .grid-container::before {
-    top: 50%;
-    height: 17vh;
+    top: 20%; 
+    height: 60%; 
+    
   }
 
-  .content-page {
+  .content-page { 
     top: 2vh;
+  }
+
+  .grid-item {
+    font-size: 20px;
   }
     
 }
