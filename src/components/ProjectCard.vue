@@ -157,7 +157,7 @@ export default {
   right: -5px;
   bottom: -5px;
   border: 2px solid black; /* Adjust the border color and width as needed */
-  clip-path: polygon(70% 0, 100% 0, 100% 30%, 30% 100%, 0 100%, 0 70%);
+  clip-path: polygon(20% 0%, 0% 0%, 0% 20%, 30% 50%, 0% 80%, 0% 100%, 20% 100%, 50% 70%, 80% 100%, 100% 100%, 100% 80%, 70% 50%, 100% 20%, 100% 0%, 80% 0%, 50% 30%);
   pointer-events: none; /* Ensure the border does not interfere with interactions */
 }
 

@@ -109,7 +109,7 @@ export default {
         },
         dogmeat: () => {
           this.consoleOutput = "Hello my love ♥";
-          this.sculpture_text = "♡"
+          this.sculpture_text = "♥"
         },
         red: () => {
           EventBus.emit("setCarRed");
