@@ -46,20 +46,11 @@ export default {
 </script>
 
 <style>
-#app {
-  position: relative;
-  width: 99%;
-  height: 96vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-gutter: stable both-edges;
-  padding-left: 0%;
-}
 
 .main-logo {
   position: absolute;
   top: -10vh;
-  left: 50%;
+  left: 48.5%;
   transform: translateX(-50%) translateY(150%);
   z-index: 2;
   mix-blend-mode: difference;
@@ -82,6 +73,7 @@ BackgroundModel {
   .main-logo {
     width: 90%; /* Adjust the width for smaller screens */
     top: 10%;
+    left: 50%;
   }
 }
 

@@ -1,17 +1,23 @@
 body {
     font-family: 'Orbitron', sans-serif;
+    background-color: #ffffff;
 }
 
+#app {
+  position: relative;
+  width: 99%;
+  height: 96vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
+  padding-right: 3%;
+}
 
-/* 
-mix-blend-mode: difference;
-filter: invert(0);
-
-onto all text elements to make them white on black background
-
-*/
-body {
-  background-color: #ffffff;
+@media screen and (max-width: 768px) {
+    #app {
+        padding-right: 6%;
+    }
+  
 }
 
 
@@ -24,7 +30,6 @@ body {
     align-items: center; 
     text-align: center;
 }
-
 
 .content-page > div {
     margin: 10px 0;

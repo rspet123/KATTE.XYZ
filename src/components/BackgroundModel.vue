@@ -236,7 +236,7 @@ export default {
   .three-container {
     max-height: 30vh;
     top: -20vh;
-    right: 2vh;
+    right: 2.5vh;
   }
   
 }
