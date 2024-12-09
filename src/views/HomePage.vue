@@ -89,7 +89,7 @@ export default {
         hi: () => {
           this.consoleOutput =
             this.hiOptions[Math.floor(Math.random() * this.hiOptions.length)];
-          this.sculpture_text = "hello";
+          this.sculpture_text = "HELLO";
         },
         "open the pod bay doors": () => {
           this.consoleOutput = "I'm sorry, Dave. I'm afraid I can't do that.";
