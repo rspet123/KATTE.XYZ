@@ -67,6 +67,7 @@ export default {
         help: () => {
           this.consoleOutput =
             "Available commands: about, portfolio, contact, tech, ????, ????";
+          this.sculpture_text = "?HELP?";
         },
         about: () => {
           EventBus.emit("goAbout");
@@ -83,6 +84,7 @@ export default {
         tech: () => {
           this.consoleOutput =
             "I Currently work with Go, PHP, Python, Javascript (Vue.js), SQL, Torch, Docker, AWS, MongoDB, SKLearn";
+          this.sculpture_text = "GO!PHP!PYTHON!JS!SQL!";
         },
         hi: () => {
           this.consoleOutput =
@@ -140,6 +142,7 @@ export default {
           this.commands[this.consoleInput]();
         } else {
           this.consoleOutput = "...";
+          this.sculpture_text = "?TRY?AGAIN?";
         }
         this.consoleInput = "";
       } else {
