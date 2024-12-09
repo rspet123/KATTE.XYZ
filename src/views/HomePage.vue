@@ -93,6 +93,7 @@ export default {
         },
         "open the pod bay doors": () => {
           this.consoleOutput = "I'm sorry, Dave. I'm afraid I can't do that.";
+          this.sculpture_text = "HAL";
         },
         rotate: () => {
           // Rotate the car model
@@ -107,7 +108,7 @@ export default {
         },
         dogmeat: () => {
           this.consoleOutput = "Hello my love ♥";
-          this.sculpture_text = "♥"
+          this.sculpture_text = "♡"
         },
         red: () => {
           EventBus.emit("setCarRed");

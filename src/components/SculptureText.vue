@@ -123,7 +123,7 @@ export default {
     width: 100%;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    height: 30vh;
+    height: 33%;
   }
 
   .grid-container::before {
