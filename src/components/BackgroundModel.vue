@@ -201,6 +201,13 @@ export default {
   },
   watch: {
     rotationPercent(newVal) {
+      if (newVal === 0 || isNaN(newVal)) {
+          this.camera.position.x = -17.5;
+          this.camera.position.z = -9.5;
+          this.camera.position.y = 7;
+          this.camera.lookAt(0, 0, 0);
+          return;
+      }
       const radius = 20; // Distance from the car
       const angle = (-(newVal/2)-.33) * 2 * Math.PI; // Convert percent to radians
       this.camera.position.x = Math.sin(angle) * radius;

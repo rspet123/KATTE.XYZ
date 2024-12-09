@@ -73,7 +73,6 @@ export default {
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-
   height: 8vh;
 }
 

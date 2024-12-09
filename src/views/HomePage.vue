@@ -105,6 +105,7 @@ export default {
         katte: () => {
           this.consoleOutput =
             "Katte is danish for cats, og jeg elsker katte :)";
+          this.sculpture_text = "CATS";
         },
         dogmeat: () => {
           this.consoleOutput = "Hello my love ♥";
