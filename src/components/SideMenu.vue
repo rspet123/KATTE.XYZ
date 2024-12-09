@@ -61,18 +61,22 @@ export default {
 </script>
 
 <style>
-.side-menu {
-  position: absolute;
-  top: -25px;
+.side-menu { 
+  position: fixed;
+  top: 0px;
   left: 0;
   width: 100%;
   color: black;
-  z-index: 5;
+  z-index: 3;
   font-family: 'Orbitron', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+  height: 8vh;
 }
+
 
 .side-menu ul {
   list-style: none;

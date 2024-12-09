@@ -51,8 +51,8 @@ export default {
 
 @media (max-width: 600px) {
   .portrait-frame {
-    width: 20vh;
-    height: 20vh;
+    min-width: 20vh;
+    min-height: 20vh;
   }
 }
 

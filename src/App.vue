@@ -61,7 +61,7 @@ export default {
   top: -10vh;
   left: 50%;
   transform: translateX(-50%) translateY(150%);
-  z-index: 9999;
+  z-index: 2;
   mix-blend-mode: difference;
   filter: invert(1);
   pointer-events: none;

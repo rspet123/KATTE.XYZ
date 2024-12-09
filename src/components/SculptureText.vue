@@ -98,8 +98,8 @@ export default {
   }
 
   .grid-container::before {
-    top: 11vh;
-    height: 18vh;
+    top: 50%;
+    height: 17vh;
   }
 
   .content-page {
