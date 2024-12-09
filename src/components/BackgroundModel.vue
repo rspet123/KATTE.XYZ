@@ -191,10 +191,11 @@ export default {
     },
     moveLightToZ(zValue){
       // moves light to z value over time
+      let speed = 0.5;
       if (this.light.position.z < zValue) {
-        this.light.position.z += 0.1;
+        this.light.position.z += speed;
       } else if (this.light.position.z > zValue) {
-        this.light.position.z -= 0.1;
+        this.light.position.z -= speed;
       }
     }
   },

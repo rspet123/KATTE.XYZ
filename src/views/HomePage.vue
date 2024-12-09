@@ -84,7 +84,7 @@ export default {
         tech: () => {
           this.consoleOutput =
             "I Currently work with Go, PHP, Python, Javascript (Vue.js), SQL, Torch, Docker, AWS, MongoDB, SKLearn";
-          this.sculpture_text = "GO!PHP!PYTHON!JS!SQL!";
+          this.sculpture_text = "GO!PHP!PYTHON!JS!SQL";
         },
         hi: () => {
           this.consoleOutput =
