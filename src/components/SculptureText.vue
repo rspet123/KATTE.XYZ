@@ -29,7 +29,7 @@ export default {
     handleMouseMove(event) {
       requestAnimationFrame(() => {
         const items = document.querySelectorAll(".grid-item");
-        if (Date.now() - this.lastAnimTime < 1000 / 16) {
+        if (Date.now() - this.lastAnimTime < 1000 / 60) {
           return;
         }
         items.forEach((item) => {
