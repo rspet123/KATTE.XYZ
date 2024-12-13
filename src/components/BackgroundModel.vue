@@ -84,19 +84,16 @@ export default {
       }
     });
     EventBus.on("toggleDarkMode", (isDarkMode) => {
-      console.log("Dark mode toggled", isDarkMode);
       if (isDarkMode) {
-        console.log("Setting background and car to black");
         this.renderer.setClearColor(0x000000, 1);
         if (this.car) {
           this.car.traverse((child) => {
             if (child.isMesh) {
-              child.material.color.set(0x000000);
+              child.material.color.set(0x313131);
             }
           });
         }
       } else {
-        console.log("Setting background and car to white");
         this.renderer.setClearColor(0xffffff, 1);
         if (this.car) {
           this.car.traverse((child) => {
