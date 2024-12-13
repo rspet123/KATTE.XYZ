@@ -18,6 +18,7 @@ export default {
   name: 'SideMenu',
   data() {
     return {
+      isDarkMode: false,
       menuItems: [
         { name: 'Home', link: '#home' },
         { name: 'About', link: '#about' },
@@ -55,7 +56,11 @@ export default {
     goContact() {
       EventBus.emit('goContact')
       this.$router.push('/contact');
-    }
+    },
+    toggleDarkMode() {
+      EventBus.emit('toggleDarkMode', this.isDarkMode);
+      document.body.classList.toggle('dark-mode', this.isDarkMode);
+    },
   }
 };
 </script>
@@ -63,7 +68,7 @@ export default {
 <style>
 .side-menu { 
   position: fixed;
-  top: 0px;
+  top: 0vh;
   left: 0;
   width: 100%;
   color: black;
@@ -73,7 +78,7 @@ export default {
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  height: 8vh;
+  height: 9vh;
 }
 
 

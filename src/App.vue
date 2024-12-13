@@ -7,11 +7,13 @@
     <img alt="KATTE logo" class="main-logo" src="./assets/logo.png" />
     <SideMenu />
     <router-view></router-view>
+    <FooterBar />
   </div>
 </template>
 
 <script>
 import BackgroundModel from "./components/BackgroundModel.vue";
+import FooterBar from "./components/FooterBar.vue";
 import SideMenu from "./components/SideMenu.vue";
 import { EventBus } from "./eventBus";
 
@@ -20,10 +22,12 @@ export default {
   components: {
     BackgroundModel,
     SideMenu, 
+    FooterBar,
   },
   data () {
     return {
       scrollPercent: 0,
+      isDarkMode: false,
     };
   },
   methods: {
@@ -83,3 +87,4 @@ BackgroundModel {
   }
 }
 </style>
+

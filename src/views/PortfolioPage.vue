@@ -1,5 +1,5 @@
 <template>
-  <div class="content-page">
+  <div class="content-page"> 
     <h1><TerminalCursor /> Projects</h1>
     <h4
       v-typewriter="{
@@ -34,6 +34,7 @@ export default {
     ProjectCard,
   },
   data() {
+    // TODO https://wpdean.com/css-carousels/ ?
     return {
       projects: [
         {
