@@ -1,7 +1,7 @@
 <template>
     <footer class="footer-bar">
       <div class="footer-content">
-        <span class="name-box">Robert Spencer - {{currentYear}}</span>
+        <span class="name-box">KATTE - {{currentYear}}</span>
         <span class="material-icons mode-icon" @click="toggleDarkMode">
             {{isDarkMode ? 'light_mode' : 'dark_mode'}}
         </span>
