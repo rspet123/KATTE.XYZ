@@ -237,6 +237,10 @@ export default {
   color: #ffffff;
 }
 
+.dark-mode .terminal-input::placeholder {
+  color: #000000;
+}
+
 .autocomplete-dropdown {
   position: absolute;
   left: 0;
