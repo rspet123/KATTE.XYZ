@@ -10,12 +10,14 @@
                 <div class="valentines-title">
 
                 </div>
-                <button class="valentines-button yes" @click="onYesClick">
-                    Yes
-                </button>
-                <button class="valentines-button no" @click="onNoClick">
-                    No
-                </button>
+                <div v-if="!yesClicked">  
+                    <button class="valentines-button yes" @click="onYesClick">
+                        Yes
+                    </button>
+                    <button class="valentines-button no" @click="onNoClick">
+                        No
+                    </button>
+                </div>
             </div>
         </div>  
     </div>
