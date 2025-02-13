@@ -10,16 +10,17 @@
       <TerminalCursor />
     </h4>
     <div class="projects-grid">
-      <ProjectCard
-        v-for="project in projects"
-        :key="project.id"
-        :title="project.title"
-        :description="project.description"
-        :link="project.link"
-        :technologies="project.technologies"
-        :isPrivate="project.isPrivate"
-        :moreInfo="project.more"
-      />
+        <ProjectCard
+          :class="{ 'card': true }"
+          v-for="project in projects"
+          :key="project.title"
+          :title="project.title"
+          :description="project.description"
+          :link="project.link"
+          :technologies="project.technologies"
+          :isPrivate="project.isPrivate"
+          :moreInfo="project.more"
+        />
     </div>
   </div>
 </template>
@@ -106,6 +107,5 @@ export default {
   .projects-grid {
     width: 100%;
   }
-  
 }
 </style>

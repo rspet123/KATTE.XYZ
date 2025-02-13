@@ -4,6 +4,7 @@ import AboutPage from "@/views/AboutPage.vue";
 import ContactPage from "@/views/ContactPage.vue";
 import PortfolioPage from "@/views/PortfolioPage.vue";
 import SecretPage from "@/views/SecretPage.vue";
+import ValentinesPage from "@/views/ValentinesPage.vue";
 
 // Define your routes
 const routes = [
@@ -31,6 +32,11 @@ const routes = [
     path: "/secret",
     name: "Secret",
     component: SecretPage,
+  },
+  {
+    path: "/dogmeat",
+    name: "dogmeat",
+    component: ValentinesPage,
   }
 ];
 

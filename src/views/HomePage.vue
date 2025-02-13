@@ -108,8 +108,7 @@ export default {
           this.sculpture_text = "CATS";
         },
         dogmeat: () => {
-          this.consoleOutput = "Hello my love ♥";
-          this.sculpture_text = "♥"
+          this.$router.push("/dogmeat");
         },
         red: () => {
           EventBus.emit("setCarRed");
