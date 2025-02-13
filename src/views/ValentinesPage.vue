@@ -73,7 +73,7 @@ export default {
                     title.innerHTML = "OK, I'll make it reallllly easy for you.";
                     // slowly triple the size of the yes button
                     yesButton.style.transition = 'all 5s ease';
-                    yesButton.style.transform = 'scale(2.5)';
+                    yesButton.style.transform = 'scale(2)';
                     // Move it to the center of the screen
                     yesButton.style.left = '50vw';
                     yesButton.style.top = '50vh';
