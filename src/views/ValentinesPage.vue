@@ -2,7 +2,7 @@
     <div class="content-page">
         <h1  v-typewriter="{
             speed: 5,
-            text: 'Hello my love, will you be my valentine?',
+            text: 'Hello Jazz, will you be my valentine?',
           }">
         </h1>
         <div class="valentines-container">
@@ -28,7 +28,8 @@ export default {
         return {
             noClicks: 0,
             pageNumbers: 0,
-            yesClicked: false
+            yesClicked: false,
+            textTimeout: 5000
         };
     },
     methods: {
@@ -46,7 +47,7 @@ export default {
             if (this.noClicks > 4) {
                 const noButton = document.querySelector('.valentines-button.no');
                 noButton.style.position = 'absolute';
-                noButton.style.left = `${Math.random() * 100}vw`;
+                noButton.style.left = `${Math.random() * 80}vw`;
                 noButton.style.top = `${Math.random() * 40}vh`;
             }
 
@@ -86,7 +87,20 @@ export default {
         onYesClick() {
             const title = document.querySelector('.valentines-title');
             this.yesClicked = true;
-            title.innerHTML = '♥♥♥♥♥♥♥♥♥♥♥♥ I was hoping you would say that ♥♥♥♥♥♥♥♥♥♥♥♥';
+            title.innerHTML = 'I was hoping you would say that!';
+            setTimeout(() => {
+                title.innerHTML = '♥ I love you ♥';
+                setTimeout(() => {
+                    title.innerHTML = 'Dinner? Characuterie board? My place? Friday?';
+                    setTimeout(() => {
+                        title.innerHTML = 'Say yes';
+                        setTimeout(() => {
+                            title.innerHTML = 'Please?';
+                        }, this.textTimeout);
+                    }, this.textTimeout);
+                }, this.textTimeout);
+            }, this.textTimeout);
+
         }
     }
 
@@ -126,10 +140,12 @@ export default {
     top: -30vh;
     background-color: white;
     z-index: 100;
+    width: 110%;
+    right: 5vw;
 }
 
 .valentines-title {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
     color: red;
