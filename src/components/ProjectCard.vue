@@ -179,7 +179,7 @@ export default {
 }
 
 .project-card h2 {
-  margin: 0 0 15px 0;
+  margin: 0 0 .5vh 0;
   font-size: 1.5rem;
   font-weight: 600;
   background: linear-gradient(270deg, #F536EE, #F4367D, #F56436);

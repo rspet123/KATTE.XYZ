@@ -88,7 +88,7 @@ export default {
         if (this.car) {
           this.car.traverse((child) => {
             if (child.isMesh) {
-              child.material.color.set(0x313131);
+              child.material.color.set(0x616161);
             }
           });
         }

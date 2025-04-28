@@ -68,14 +68,14 @@ export default {
           description:
             "A tool to track enemy spies in EVE Online via their discord activity, Currently Private, Being used by a Large EVE Online Alliance (1000+ Members)",
           link: "",
-          technologies: ["Python", "MongoDB", "Discord API", "SKLearn"],
+          technologies: ["Python", "MongoDB", "SKLearn"],
           isPrivate: true,
           more: "EVE Online is incredibly serious and competitive game, and counter-intelligence is a big part of that, especially out of the game itself. I made this tool to help a friend who was leading a large alliance track enemy spies. It uses the Discord API to track activity and uses SKLearn to analyze the data. I can't tell you how it works here, but it has already been quite successful.",
         },
         {
             title: "Atlas",
             description:
-              "A third-party matchmaking website for the Overwatch 2 Beta, built with Python, MongoDB, with a React.js frontend and Discord Authentication/SSO. Unfortunatly, the project was abandoned due to the game's own ranked mode releasing.",
+              "A third-party matchmaking website for the Overwatch 2 Beta, built with Python, MongoDB, with a React.js frontend and Discord Authentication/SSO.",
             link: "https://github.com/rspet123/Atlas",
             technologies: ["Python", "MongoDB", "Discord API", "AWS"],
             more: "After the OW2 Beta was announced, A group of high-level players wanted a way to play ranked games against each other, so I made this site to facilitate that. I worked with a Front-End dev, who did the React.js frontend, It was a fun project, but the game's own ranked mode released before we could fully finish it, and the project was abandoned. At It's peak it had around 100 users, with a custom ELO system and a leaderboard.",
