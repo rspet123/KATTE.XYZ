@@ -91,6 +91,7 @@
   }
 
 .name-box { /* center the name */
+    font-family: "Parris", sans-serif;
     font-size: 24px;
 }
 

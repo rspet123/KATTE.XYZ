@@ -1,6 +1,26 @@
+/* FONTS */
+@font-face {
+  font-family: 'Parris';
+  src: url('@/assets/fonts/parris-redacted.otf');
+}
+
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #ffffff;
+}
+
+h1, h2, h3 {
+    font-family: 'Parris', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+li.side-menu-link {
+    font-family: 'Parris', sans-serif;
+    text-transform: uppercase;
 }
 
 /* Dark mode */
@@ -58,6 +78,10 @@ body {
 
 .dark-mode .content-page h1 {
     color: #000000;
+}
+
+.dark-mode.content-page a {
+    color: #ffffff !important;
 }
 
 #app {
