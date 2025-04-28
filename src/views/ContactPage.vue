@@ -1,7 +1,7 @@
 <template>
   <div class="content-page">
     <h1><TerminalCursor /> Contact</h1>
-    <h4 v-typewriter="{ text: 'Contact Me Here... Thanks.', seconds: 2 }"></h4>
+    <h3 v-typewriter="{ text: typedText, seconds: 2 }"></h3>
     <div class="contact-links">
       <a
         href="https://github.com/rspet123"
@@ -19,7 +19,10 @@
       >
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="mailto:rspet123@gmail.com" class="contact-link" title="Email">
+      <a 
+      href="mailto:rspet123@gmail.com" 
+      class="contact-link" 
+      title="Email">
         <i class="fas fa-envelope"></i>
       </a>
       <a href="/resume.pdf" class="contact-link" download title="Resume">
@@ -36,6 +39,16 @@ export default {
   components: {
     TerminalCursor,
   },
+  data() {
+    return {
+      typedText: 'Contact Me Here...'
+    }
+  },
+  mounted() {
+    setTimeout(() => {  
+      this.typedText = 'Thanks...'
+    }, 5000)
+  }
 };
 </script>
 
