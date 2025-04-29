@@ -12,7 +12,6 @@ body {
 h1, h2, h3 {
     font-family: 'Parris', sans-serif;
     font-weight: 700;
-    color: #000000;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -88,6 +87,12 @@ li.side-menu-link {
   color: #ffffff !important;
   filter: invert(0);
 }
+
+.dark-mode.content-page h3 {
+  color: #ffffff !important;
+  filter: invert(0);
+}
+
 
 #app {
   position: relative;
