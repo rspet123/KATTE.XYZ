@@ -84,6 +84,11 @@ li.side-menu-link {
     color: #ffffff !important;
 }
 
+.dark-mode.content-page h4 {
+  color: #ffffff !important;
+  filter: invert(0);
+}
+
 #app {
   position: relative;
   width: 100%;
@@ -137,6 +142,15 @@ li.side-menu-link {
   
   #app::-webkit-scrollbar-thumb:hover {
     background: #474747;
+  }
+
+  /* Darkmode Scrollbar */
+  .dark-mode #app::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  .dark-mode #app::-webkit-scrollbar-thumb {
+    background: #ffffff;
   }
 
   a:hover {

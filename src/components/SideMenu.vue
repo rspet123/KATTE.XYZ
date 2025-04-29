@@ -94,7 +94,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: rgba(255, 255, 255, 0.95);
   height: 9vh;
 }
 
@@ -152,8 +152,7 @@ export default {
   display: none;
   position: absolute;
   right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 30%;
   z-index: 1001;
   cursor: pointer;
 }
@@ -193,8 +192,8 @@ export default {
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 70px;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -214,6 +213,7 @@ export default {
 }
 
 .mobile-menu-link {
+  font-family: 'Parris', sans-serif;
   padding: 1rem;
   text-align: center;
   font-size: 1.2rem;
@@ -226,6 +226,18 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.dark-mode .mobile-menu {
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+}
+
+.arrow {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 
 @keyframes flowingGradient {
   0% { background-position: 0% 50%; }
