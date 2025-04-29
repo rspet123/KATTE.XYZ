@@ -6,8 +6,8 @@
         <div class="front">
           <p>{{ description }}</p>
           <div class="card-bottom-anchor">
-            <a :href="link" v-if="!isPrivate" target="_blank">View Project</a>
-            <span v-else> <i class="fas fa-lock"></i> Private Project </span>
+            <a :href="link" v-if="!isPrivate && link != ''" target="_blank">View Project</a>
+            <span v-else-if="isPrivate"> <i class="fas fa-lock"></i> Private Project </span>
             <div class="technologies">
               <span
                 v-for="tech in technologies"
