@@ -21,7 +21,7 @@
             </h3>
           </a>
           <img
-            src="https://www.ezoic.com/_vercel/image?url=_astro%2FbigE.8yEvsr1B.png&w=640&q=100"
+            src="https://www.ezoic.com/images/ezemblem.png"
             alt="Ezoic Logo"
             width="30">
         </div>

@@ -102,7 +102,6 @@ export default {
                     }, this.textTimeout);
                 }, this.textTimeout);
             }, this.textTimeout);
-
         }
     }
 
